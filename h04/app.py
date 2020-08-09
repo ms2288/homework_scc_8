@@ -14,7 +14,7 @@ def homework():
     return render_template('index.html')
 
 
-# 주문하기(POST) API
+# 주문하기(POST) API/1
 @app.route('/order', methods=['POST'])
 def save_order():
     order_receive=request.form['name'];
@@ -35,7 +35,7 @@ def save_order():
 
 
 
-# 주문 목록보기(Read) API
+# 주문 목록보기(Read) API/1
 @app.route('/order', methods=['GET'])
 def view_orders():
     orders=list(db.order.find({}, {'_id': 0}))
