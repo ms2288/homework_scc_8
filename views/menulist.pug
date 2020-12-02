@@ -1,0 +1,15 @@
+extends menu
+include mixins/menuBlock
+
+block content
+    div.items
+        each one in menu
+            +menuBlock({
+                src: one.getValue().image,
+                name: one.getValue().name,
+                price: one.getValue().price,
+                cat: one.getValue().cat,
+                shot : one.getValue().shot,
+                cream: one.getValue().cream,
+                cinnamon: one.getValue().cinnamon
+            })

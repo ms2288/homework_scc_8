@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 525px;
+            height: 700px;
+            background: white;
+        }
+
+        #top1 {
+            height: 50px;
+            background: cornflowerblue;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 50px;
+            color: white;
+        }
+
+        #top2 {
+            height: 85px;
+            border-bottom: 3px solid black;
+            font-size: 35px;
+            line-height: 90px;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+
+            margin: auto;
+        }
+
+        .btn {
+            display: block;
+            width: 100px;
+            height: 50px;
+            background: #4ac4f3;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            border-radius: 50px;
+        }
+
+        #popup_top1 {
+            background-color: cornflowerblue;
+            width: 100%;
+            height: 10%;
+        }
+
+        #popup_top2 {
+            font-size: 15px;
+            text-align: center;
+            border-bottom: 2px solid grey;
+        }
+
+        #popup_top3 {
+            font-size: 15px;
+            color: orange;
+            text-align: center;
+        }
+
+        #showTime {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #checkpoint_top1 {
+            background-color: cornflowerblue;
+            width: 100%;
+            height: 10%;
+        }
+        #cancle_top1{
+            background-color: cornflowerblue;
+            width: 100%;
+            height: 10%;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*border-radius:;*/
+            /*background-color: ;*/
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s, visibility 1s;
+
+        }
+
+        #button {
+            position: relative;
+            height: 50%;
+            text-align: center;
+        }
+
+        .popup > .popup-content {
+            width: 350px;
+            height: 350px;
+            border: 1px solid black;
+            background-color: white;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+    <title>결제하기</title>
+    <script>
+
+        function fail_message() {
+            open_cancle_popup()
+        }
+
+        var time_pause = 0;
+        $(document).ready(function () {
+            
+            var seconds = 30;
+            var minutes = 0;
+
+            function calculate() {
+                setTimeout(calculate, 1000);
+                $('#showTime').html('0:' + minutes + '0:' + seconds);
+                console.log(time_pause)
+                if (time_pause == 0) {
+                    seconds--;
+                } else {
+                    seconds;
+                }
+                if (seconds < 0) {
+                    seconds = 30;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 0;
+                        seconds = 0;
+
+                    }
+                    fail_message();
+
+                }
+            }
+
+            calculate();
+        });
+
+        function change_to_checkpoint() {
+            window.location.href='/change_to_checkpoint'
+        }
+        function change_to_complete() {
+            window.location.href='/change_to_complete'
+        }
+        function open_checking_popup() {
+            $('#checking').css('opacity', '1');
+            $('#checking').css('visibility', 'visible')
+            time_pause = 1;
+            setTimeout(() => close_checking_popup(), 2500);
+        }
+
+        function open_checkpoint_popup() {
+            $('#checkpoint').css('opacity', '1');
+            $('#checkpoint').css('visibility', 'visible');
+            time_pause = 1
+        }
+
+        function close_checking_popup() {
+            $('#checking').css('opacity', '0');
+            $('#checking').css('visibility', 'hidden')
+            time_pause = 0
+            setTimeout(() => open_checkpoint_popup(), 1000);
+        }
+
+        function close_checkpoint_popup() {
+            $('#checkpoint').css('opacity', '0');
+            $('#checkpoint').css('visibility', 'hidden')
+            time_pause = 0
+        }
+        function open_cancle_popup() {
+            $('#cancle').css('opacity', '1');
+            $('#cancle').css('visibility', 'visible');
+            time_pause = 1
+            setTimeout(() => close_cancle_popup(), 2500);
+        }
+        function close_cancle_popup() {
+            $('#cancle').css('opacity', '0');
+            $('#cancle').css('visibility', 'hidden')
+            time_pause = 0
+        }
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div id="top1">카드결제</div>
+    <div id="top2">주문수량 <span style="color:red">1</span> 결제금액 <span style="color:red">3,000</span></div>
+    <img src="{{url_for('static', filename='image/insert_card.gif')}}" ;alt="" ; width="330"><img>
+    <br>
+    <h1 align="center" style="font-size: 35px">IC카드를 투입구에 넣어주세요.</h1>
+    <br>
+    <h5 style="color: red; font-size:20px" align="center">30초내로 삽입이 안될경우 결제가 취소됩니다!!!</h5>
+    <br>
+    <div id='showTime'></div>
+    <br>
+    <!--    <h3 id="time" align="center">00:30</h3>-->
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="fail_message()">취소</button>
+    <br>
+    <div class="card_insert" style="text-align: center">
+        <a href="#pop1" class="btn" onclick="open_checking_popup()">카드삽입</a>
+    </div>
+    <div class="popup" id="checking">
+        <div class="popup-content">
+            <div id="popup_top1"></div>
+            <br><br>
+            <div class="body">
+                <br><br><br><br>
+                <div id="popup_top2">승인요청중입니다.잠시만 기다려주세요</div>
+                <br><br><br><br>
+                <div id="popup_top3">결제가 끝날때까지 카드를 뽑지 말아주세요</div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="checkpoint">
+        <div class="popup-content">
+            <div id="checkpoint_top1"></div>
+            <br><br><br><br><br><br>
+            <div style="text-align: center;font-size: 15px;line-height:5px">터칭 제휴 적립을 진행하시겠습니까?</div>
+            <br><br><br>
+            <div id="button">
+                <button type="button" class="btn btn-secondary btn-lg" onclick="change_to_checkpoint()">예</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="change_to_complete()">아니요</button>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="cancle">
+        <div class="popup-content">
+            <div id="cancle_top1"></div>
+            <br><br><br><br><br><br>
+            <div style="text-align: center;font-size: 25px">결제가 취소되었습니다.</div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+
+</html>

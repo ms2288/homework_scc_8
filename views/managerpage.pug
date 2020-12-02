@@ -1,0 +1,64 @@
+doctype html
+html(lang="ko")
+  head
+    link(href="static/css/managerpage.css" rel="stylesheet")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Bootstrap CSS
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title ManagerPage
+  body
+    .wrapper
+      #top1
+        | 운영 관리
+        button#Xbtn
+            a(href=routes.cover) X
+      #top2  매장 정보
+      #bottom
+        | 매장명
+        span#bottom_right 메가커피 외대점 
+      #bottom
+        | 포스 정보
+        span#bottom_right POS1 
+      #top2  영업 관리
+      #bottom
+        | 영업준비
+        span#bottom_right
+          button#btns 영업개시
+          button#btns 영업마감
+      #bottom
+        | 결제취소
+        span#bottom_right
+          button#btns 결제취소
+      #top2  매출 관리
+      #bottom
+        | 일별/월별 매출
+        span#bottom_right
+          button#btns 일별매출
+          button#btns 월별매출
+      #bottom
+        | 시간별 매출
+        span#bottom_right
+          button#btns 시간별매출
+      #top2  옵션 설정
+      #bottom
+        | 관리자 비밀번호 옵션
+        span#bottom_right
+          button#btns 비밀번호 설정
+      #bottom
+        | 영수증 주문번호 옵션
+        span#bottom_right
+          button#btns 주문번호 설정
+      #bottom
+        | 메뉴 등록 및 변경
+        span#bottom_right
+          button#btns 메뉴 설정
+      br
+      br

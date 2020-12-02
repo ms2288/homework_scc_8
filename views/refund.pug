@@ -1,0 +1,70 @@
+doctype html
+html
+    head
+        title 메가커피 키오스크
+        link(rel="stylesheet" type="text/css" href="/static/css/refund.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+
+        script(src='http://code.jquery.com/jquery-1.9.1.js')
+        script(src='http://code.jquery.com/ui/1.10.2/jquery-ui.js')
+        script(src='/static/js/refund.js')
+            
+    body
+        header
+            h2 영수증 관리
+        nav.navbar.navbar-light.bg-light.justify-content-right
+            form.form-inline
+                input.form-control.mr-sm-2(type="date" value="2020-11-22")
+            form.form-inline
+                button.btn.btn-outline-success(type="button") 주문번호 조회
+                button.btn.btn-outline-success(type="button") 승인번호 조회
+                button.btn.btn-outline-success(type="button") 영수증 재출력
+                button.btn.btn-outline-success(type="button") 반품 
+        main
+            article
+                table#table_order_list.table.table-bordered.table-sm.table-fix-head
+                    thead.thead-light
+                        tr
+                            th No
+                            th 주문번호
+                            th 거래일시
+                            th 매장/T.O.
+                            th 금액
+                            th 결제 
+                            th 적립
+                    tbody
+                        - var i = 1
+                        each one in refund
+                            tr
+                                td.item_num=`${i++}`
+                                td.item_id=` ${one.getValue().id} `
+                                - var ot = one.getValue().orderTime
+                                td.item_orderTime=` ${ot.getFullYear()}년 ${ot.getMonth()+1}월 ${ot.getDate()}일 \n${ot.getHours()}시 ${ot.getMinutes()}분 ${ot.getSeconds()}초`
+                                td.item_TO=` 테이크 아웃 `
+                                td.item_price=` ${one.getValue().price} `
+                                td.item_payment=` 카드 `
+                                td.item_stamp=""
+            article
+                table#detailed_order.table.table-bordered(hidden)
+                    tr
+                        th 임시 메세지
+                        td JH 이 부분 원래는 주문한 음료가 어떤건지 보여줘야 되는데 그러려면 DB에 주문한 음료정보도 어레 start이나 딕셔너리같은걸로 들어가있어야 할 것 같아요. 나중에 혹시 그렇게 구현된다면 음료 목록 나오게 할게요. 
+                    tr
+                        th 주문번호
+                        td.order_id
+                    tr
+                        th 거래일시
+                        td.order_orderTime
+                    tr
+                        th 매장/T.O.
+                        td.order_TO
+                    tr
+                        th 금액
+                        td.order_price
+
+
+        .data
+            input(type="text" id="refund" value=`${JSON.stringify(refund)}` hidden)
+            
+
+        

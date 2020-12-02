@@ -1,0 +1,7 @@
+mixin menuBlock(menu={})
+    div.item#item
+        img.item_image(src=menu.src, onerror=`this.onerror=null; this.src='/static/picture/default.png'` alt="pic")
+        span.item_name=menu.name
+        span.item_price=menu.price
+        span.item_cat(hidden)=` ${menu.cat} `
+        span.item_prop(hidden)=`${menu.shot},${menu.cream},${menu.cinnamon}`

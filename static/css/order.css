@@ -1,0 +1,189 @@
+.header_order {
+  height: 90px;
+  background-color: #472c0c;
+}
+
+.drinkImg {
+  width: 130px;
+  height: 80px;
+  margin-top: 5px;
+  margin-left: 10px;
+  float: left;
+}
+
+#menuName {
+  color: white;
+  font-size: 20px;
+  display: flex;
+  margin-left: 40px;
+  margin-right: 100px;
+  margin-top: 10px;
+  font-size: 18px;
+  float: left;
+}
+
+#menuNum {
+  color: white;
+  font-size: 17px;
+  display: block;
+  margin-right: 315px;
+  margin-top: -19px;
+  float: right;
+}
+
+#minusBtn {
+  font-size: 22px;
+  color: white;
+  margin-top: 45px;
+  position: relative;
+  left: -170px;
+}
+
+#plusBtn {
+  font-size: 22px;
+  color: white;
+  margin-top: 45px;
+  position: relative;
+  left: -150px;
+}
+
+#menuQuantity {
+  font-size: 25px;
+  color: white;
+  margin-top: 37px;
+  position: relative;
+  left: -160px;
+}
+
+.header_order #eachPrice {
+  color: white;
+  font-size: 15px;
+  margin-top: -60px;
+  margin-right: 10px;
+}
+
+.header_order #wordSum {
+  color: white;
+  font-size: 15px;
+  margin-top: -46px;
+  margin-right: 90px;
+}
+
+#header_sum {
+  color: white;
+  font-size: 25px;
+  margin-top: -35px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.right {
+  float: right;
+}
+
+.header_order div {
+  display: flex;
+}
+
+/* body {
+  height: 700px;
+  width: 525px;
+  margin: 0 auto;
+  border: 1px solid black;
+} */
+
+table {
+  border-collapse: unset;
+}
+
+#tableDiv {
+  width: 525px;
+  height: 510px;
+}
+
+#tableDiv table {
+  margin-top: 10px;
+  margin-left: 2px;
+  border-spacing: 2px;
+}
+
+#tableDiv td {
+  border: 3px solid rgb(199, 194, 194);
+  padding: 15px;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#tableDiv .selected {
+  background-color: rgb(240, 234, 234);
+  border-color: red;
+}
+
+.footer {
+  height: 90px;
+  width: 525px;
+  background-color: slategray;
+}
+
+#footer_sum {
+  color: white;
+  float: left;
+  /* margin-left: 272px; */
+  font-size: 33px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.footer #sumWord {
+  color: white;
+  text-align: right;
+  font-size: 15px;
+}
+
+.footer #decideCancel {
+  float: right;
+  display: block;
+  background-color: tomato;
+  width: 70px;
+  height: 60px;
+  text-align: center;
+  line-height: 53px;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.footer #decideOrder {
+  float: right;
+  display: block;
+  background-color: #4954ec;
+  width: 70px;
+  height: 60px;
+  text-align: center;
+  line-height: 53px;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer_items {
+  margin-left: auto;
+  display: flex;
+}
+
+.footer_item {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+#footer_item {
+  margin-bottom: 15px;
+}

@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    link(href="../static/css/numberpad.css" rel="stylesheet")
+    meta(charset="UTF-8")
+    // Bootstrap CSS
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    script(src="../static/class/ClassModules.js")
+    script(src="../static/js/numberpad.js")
+    
+    title numberpad
+  body
+    .wrapper
+      #top
+      br
+      .top_comment
+        .comment 적립을 위해 휴대폰 번호를 입력해주세요.
+        #phonenumber 010
+      br
+      br
+      .number_pad
+        #row1.row
+          button.btn(onclick="number1()") 1
+          button.btn(onclick="number2()") 2
+          button.btn(onclick="number3()") 3
+        .phone_number
+        #row2.row
+          button.btn(onclick="number4()") 4
+          button.btn(onclick="number5()") 5
+          button.btn(onclick="number6()") 6
+        #row3.row
+          button.btn(onclick="number7()") 7
+          button.btn(onclick="number8()") 8
+          button.btn(onclick="number9()") 9
+        #row4.row
+          button.btn(onclick="delete_all()") 전체삭제
+          button.btn(onclick="number0()") 0
+          button.btn(onclick="delete_one()") <
+        #row5.row
+          button#bottom_cancle.btn.bottom(onclick="change_to_complete()") 취소
+          button#bottom_check.btn.bottom(onclick="open_checkpoint_popup(1)") 확인
+        .bottom_comments
+          .bottom_comment 전화번호 입력 후 확인 버튼을 누르시면 회원정보 조회 후 적립이 진행됩니다.
+          .bottom_comment 스탬프 적립내역은 메가커피 전용 APP에서 확인가능합니다.
+        #checkpoint.popup
+          .popup-content
+            #checkpoint_top
+            br
+            br
+            br
+            br
+            br
+            br
+            div(style="text-align: center;font-size: 25px")=`${order.quantity} 스탬프가 적립되었습니다.`
+      .data
+        input(type="text" id="order" value=`${JSON.stringify(order)}` hidden)

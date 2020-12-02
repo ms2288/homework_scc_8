@@ -1,0 +1,68 @@
+doctype html
+html
+    head
+        title 메가커피 키오스크
+        <style type="text/css"> a { text-decoration:none } </style> 
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous")
+        link(rel="stylesheet" href="/static/css/order.css")
+    body
+        div.header
+            img.drinkImg(src=drink.src alt="picture")
+            span#menuName=drink.name
+            span#menuNum <br>수량 
+            div
+                i.fas.fa-minus-circle#minusBtn
+                span#menuQuantity 1
+                i.fas.fa-plus-circle#plusBtn
+            span.right#price=`단가 ${drink.price}`
+            span.right#wordSum <br>합계
+            span.right#header_sum=drink.price
+        div.order_main
+            //- shot
+            if drink.shot && !drink.cream && !drink.cinnamon
+                table#onlyShot
+                    tr
+                        td.onlyShot_topping 샷추가
+                        td.onlyShot 샷추가1개<br>(+ 500)
+                        td.onlyShot 샷추가2개<br>(+ 1,000)
+                        td.onlyShot 연하게
+                        td.onlyShot.selected 선택안함
+            //- cream
+            if drink.cream && !drink.shot
+                table#onlyCream
+                    tr
+                        td.onlyCream_topping 휘핑
+                        td.onlyCream 휘핑O
+                        td.onlyCream.selected 휘핑X
+            //- shot cream
+            if drink.shot && drink.cream 
+                table#shotCream
+                    tr.first
+                        td.shotCream_shot_topping 토핑
+                        td.shotCream_shot 샷추가1개<br>(+ 500)
+                        td.shotCream_shot 샷추가2개<br>(+ 1,000)
+                        td.shotCream_shot.selected 선택안함
+                    tr
+                        td.shotCream_cream_topping 토핑2
+                        td.shotCream_cream 휘핑O
+                        td.shotCream_cream.selected 휘핑X
+            //- shot cinnamon
+            if drink.shot && drink.cinnamon
+                table#shotCinnamon
+                    tr.first
+                        td.shotCinnamon_shot_topping 토핑
+                        td.shotCinnamon_shot 샷추가1개<br>(+ 500)
+                        td.shotCinnamon_shot 샷추가2개<br>(+ 1,000)
+                        td.shotCinnamon_shot.selected 선택안함
+                    tr
+                        td.shotCinnamon_cinnamon_topping 토핑2
+                        td.shotCinnamon_cinnamon 시나몬O
+                        td.shotCinnamon_cinnamon.selected 시나몬X
+        div.footer
+            div.footer_items
+                div.footer_item#footer_item
+                    div#footer_sum=drink.price
+                    div#sumWord <br>결제금액
+            div.footer_item#cancel 취소
+            div.footer_item#order 주문
+        script(src="/static/js/order.js")

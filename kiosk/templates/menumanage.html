@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-size:13px;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 525px;
+            height: 700px;
+            background: white;
+            border : 3px solid grey
+        }
+
+        #leftone {
+            width: 50%;
+            height: 100%;
+            float:left;
+            border-right: 1px solid grey;
+        }
+        #rightone {
+            width: 50%;
+            float:right;
+        }
+        #Xbtn {
+            width: 40px;
+            height: 40px;
+            top: 30px;
+            float: right;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size : 25px;
+        }
+        .top1{
+            width: 100%;
+            height: 30px;
+            font-size : 13px;
+            line-height:30px;
+            text-align: center;
+            background-color: rgb(80, 80, 80);
+            color:white;
+        }
+        .top2{
+            width: 50%;
+        }
+        .select100 {
+            width:100%;
+        }
+        #bottom{
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid black;
+            font-size : 13px;
+            line-height: 40px;
+        } 
+
+        #bottom_right{
+            margin-right: auto;
+            float: right;
+        }
+
+        .btns{
+            width: 95px;
+            height:35px;
+            margin:2px;
+            font-size:13px;
+            background-color: rgb(66, 124, 231);
+            color:white;
+            border:none;
+            border-radius:0.1em;
+            cursor: pointer;
+        }
+        .btns:hover{
+            box-shadow: 200px 0 0 0 rgba(0,0,0,0.25) inset, -200px 0 0 0 rgba(0,0,0,0.25) inset;
+        }
+        .rightside1{
+            margin-left:10px;
+            color:rgb(185, 40, 69);
+            line-height:30px;
+        }
+        .rightside2{
+            line-height:30px;
+            width: 65%;
+        }
+        .red{
+            background-color: rgb(241, 57, 94);
+        }
+        .orange{
+            background-color:rgb(247, 158, 99);
+        }
+        .green{
+            background-color: rgb(101, 197, 138);
+        }
+        .f_left{
+            float:left;
+        }
+        .f_right{
+            float:right;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MenuManage</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <div id="leftone">
+        <button class="btns red f_right">카테고리 추가</button><br><br><br>
+        <div class="top1">카테고리</div>
+        <select name="catslist" size="6" class="select100">
+            <option value="">추후 DB와 연결 예정</option>
+        </select>
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="search" style = "height:35px">
+        <input type="submit" value = "조회" class="btns" style="width:50px">
+        <br><br>
+        <div class="top1 top2 f_left">메뉴</div>
+        <div class="top1 top2 f_right">판매 가격</div>
+    </div>
+    <div id="rightone">
+        <button class="btns orange f_left">신규</button> <button class="btns green f_left">저장</button>
+        <div id="Xbtn"> X </div> <br><br><br><br>
+        <div class="f_left rightside1">
+            카테고리<br>
+            아이템명<br>
+            토핑메뉴<br>
+            가격<br>
+            기타설정<br>
+            이미지 등록
+        </div>
+        <div class="f_right rightside2">
+            <select>
+                <option>커피</option>
+            </select><br>
+            <input type=text style="line-height:10px"></text><br>
+            <select>
+                <option>사용안함</option>
+            </select>
+            <input type=number min="0" step="100"><br>
+            ICE MENU <input type=checkbox> SOLD OUT <input type=checkbox><br>
+            <input type="file">
+        </div>
+    </div>
+</div>
+</body>
+
+</html

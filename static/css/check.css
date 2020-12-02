@@ -1,0 +1,111 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 525px;
+    height: 700px;
+    background: white;
+}
+
+#top1 {
+    height: 50px;
+    background: cornflowerblue;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+    color: white;
+}
+
+#top2 {
+    height: 85px;
+    border-bottom: 3px solid black;
+    font-size: 35px;
+    line-height: 90px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.btn {
+    display: block;
+    width: 100px;
+    height: 50px;
+    background: #4ac4f3;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50px;
+}
+
+#popup_top1 {
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 10%;
+}
+
+#popup_top2 {
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 2px solid grey;
+}
+
+#popup_top3 {
+    font-size: 15px;
+    color: orange;
+    text-align: center;
+}
+
+#showTime {
+    text-align: center;
+    font-size: 30px;
+}
+
+#checkpoint_top1 {
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 10%;
+}
+
+#cancle_top1 {
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 10%;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*border-radius:;*/
+    /*background-color: ;*/
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 1s;
+}
+
+#button {
+    position: relative;
+    height: 50%;
+    text-align: center;
+}
+
+.popup>.popup-content {
+    width: 350px;
+    height: 350px;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    ;
+}

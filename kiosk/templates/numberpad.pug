@@ -1,0 +1,217 @@
+doctype html
+html(lang="en")
+  head
+    // Bootstrap CSS
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    meta(charset="UTF-8")
+    title numberpad
+    style.
+      html,
+      body {
+      width: 100%;
+      height: 100%;
+      }
+      .wrapper {
+      margin: 0 auto;
+      position: relative;
+      width: 525px;
+      height: 700px;
+      border:3px solid gray;
+      }
+      .row{
+      margin:0 auto;
+      width: 90%;
+      height:20%;
+      }
+      .btn{
+      position: center;
+      margin : 0 auto;
+      border-radius:5px;
+      position: center;
+      width: 32%;
+      height: 98%;
+      font-size: 30px;
+      background-color: lightcyan;
+      border: 2px solid black;
+      vertical-align: middle;
+      }
+      .number_pad{
+      margin:0 auto;
+      width: 100%;
+      height:60%;
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      transform: translateX(-50%) translateY(-39%);
+      }
+      .bottom{
+      width: 48%;
+      }
+      .top_comment{
+      text-align: center;
+      width: 100%;
+      height: 30%;
+      }
+      .comment{
+      width: 100%;
+      text-align: center;
+      font-size: 25px;
+      color: red;
+      }
+      #phonenumber{
+      text-align: center;
+      font-size: 50px;
+      width: 100%;
+      height: 10%;
+      /*border-bottom: 3px solid black;*/
+      }
+      .bottom_comments{
+      margin:0 auto;
+      }
+      .bottom_comment{
+      font-size:18px;
+      text-align: center;
+      }
+      #top{
+      height: 60px;
+      background: cornflowerblue;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 80px;
+      color: white;
+      }
+      #bottom_cancle{
+      background-color: deeppink;
+      color: white;
+      font-weight: bold;
+      }
+      #bottom_check{
+      color: white;
+      font-weight: bold;
+      background-color: mediumblue;
+      }
+      .popup > .popup-content {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      background-color: white;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);;
+      }
+      .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /*border-radius:;*/
+      /*background-color: ;*/
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s, visibility 1s;
+      }
+      #checkpoint_top{
+      background-color: cornflowerblue;
+      width: 100%;
+      height: 10%;
+      }
+    script.
+      function open_checkpoint_popup() {
+      $('#checkpoint').css('opacity', '1');
+      $('#checkpoint').css('visibility', 'visible');
+      setTimeout(() => close_checkpoint_popup(), 2500);
+      }
+      function close_checkpoint_popup() {
+      $('#checkpoint').css('opacity', '0');
+      $('#checkpoint').css('visibility', 'hidden')
+      change_to_complete()
+      }
+      function change_to_complete() {
+      window.location.href="/change_to_complete"
+      }
+      function number0() {
+      $('#phonenumber').append('0')
+      }
+      function number1() {
+      $('#phonenumber').append('1')
+      }
+      function number2() {
+      $('#phonenumber').append('2')
+      }
+      function number3() {
+      $('#phonenumber').append('3')
+      }
+      function number4() {
+      $('#phonenumber').append('4')
+      }
+      function number5() {
+      $('#phonenumber').append('5')
+      }
+      function number6() {
+      $('#phonenumber').append('6')
+      }
+      function number7() {
+      $('#phonenumber').append('7')
+      }
+      function number8() {
+      $('#phonenumber').append('8')
+      }
+      function number9() {
+      $('#phonenumber').append('9')
+      }
+      function delete_one() {
+      $('#phonenumber').pop
+      }
+      function delete_all() {
+      $('#phonenumber').empty()
+      }
+  body
+    .wrapper
+      #top
+      br
+      .top_comment
+        .comment 적립을 위해 휴대폰 번호를 입력해주세요.
+        #phonenumber
+      br
+      br
+      .number_pad
+        #row1.row
+          button.btn(onclick="number1()") 1
+          button.btn(onclick="number2()") 2
+          button.btn(onclick="number3()") 3
+        .phone_number
+        #row2.row
+          button.btn(onclick="number4()") 4
+          button.btn(onclick="number5()") 5
+          button.btn(onclick="number6()") 6
+        #row3.row
+          button.btn(onclick="number7()") 7
+          button.btn(onclick="number8()") 8
+          button.btn(onclick="number9()") 9
+        #row4.row
+          button.btn(onclick="delete_all()") 전체삭제
+          button.btn(onclick="number0()") 0
+          button.btn(onclick="delete_one()") <
+        #row5.row
+          button#bottom_cancle.btn.bottom(onclick="change_to_complete()") 취소
+          button#bottom_check.btn.bottom(onclick="open_checkpoint_popup()") 확인
+        .bottom_comments
+          .bottom_comment 전화번호 입력 후 확인 버튼을 누르시면 회원정보 조회 후 적립이 진행됩니다.
+          .bottom_comment 스탬프 적립내역은 메가커피 전용 APP에서 확인가능합니다.
+        #checkpoint.popup
+          .popup-content
+            #checkpoint_top
+            br
+            br
+            br
+            br
+            br
+            br
+            div(style="text-align: center;font-size: 25px") 1 스탬프가 적립되었습니다.

@@ -1,0 +1,61 @@
+doctype html
+html(lang="ko")
+  head
+    link(href="static/css/complete.css" rel="stylesheet")
+    // Required meta tags
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Bootstrap CSS
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    script(src="static/js/complete.js")
+    
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title complete
+  body
+    .wrapper
+      #top1 결제완료
+      #order_inf
+        #payment
+          | 결제금액
+          span#payment_n=` ${order["price"]}원`
+      br
+      br
+      div(style="font-size: 30px; text-align: center") 영수증을 받아가 주세요.
+      div(style="font-size: 35px;color: red;text-align: center")=`주문번호 ${order["orderNum"]}`
+      br
+      br
+      img#image(src="static/picture/receipt.gif" alt="")
+      img
+      br
+      br
+      h1(style="font-size: 18px" align="center")
+        | 결제가 완료되었습니다.
+        br
+        | 이용해 주셔서 감사합니다.
+      br
+      h2(style="color: red; font-size: 20px" align="center") 카드를 회수하여 주시기 바랍니다.결제완료 화면은 잠시후 자동으로 닫힙니다.
+      h6
+      #receipt.popup
+        .popup-content(style="border: 3px solid black")
+          #cancle_top1(style="font-size: 30px; text-align: center") 영수증
+          div
+            div(style="font-size: 30px;text-align: center")=`주문번호 ${order["orderNum"]}번`
+            div(style="font-size: 15px;text-align: center")
+              div=`주문 고유번호 : ${order["id"]}`
+              div=`${timestr}`
+              div=`매장번호 : ${order["storeNum"]}`
+              div=`주문번호 : ${order["orderNum"]}`
+              br
+            div(style="text-align: center;font-size: 20px;")
+              -Menus=JSON.parse(order["menus"])
+              each one in Menus
+                div=`${one["name"]} ${one["quantity"]}개: ${one["price"]}원`
+              div ------------------------------------------
+              div=`총합계 : ${order["price"]}원`
+              div=`총수량 : ${order["quantity"]}개`

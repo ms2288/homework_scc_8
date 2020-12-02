@@ -1,0 +1,450 @@
+body {
+  height: 700px;
+  width: 525px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#orderDiv {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 700px;
+  width: 525px;
+}
+
+#menuDiv {
+  position: absolute;
+  top: 0;
+}
+
+.header {
+  height: 40px;
+  background-color: #472c0c;
+}
+
+.header button {
+  width: 130px;
+  height: 30px;
+  margin-top: 5px;
+  background-color: #472c0c;
+  color: white;
+  margin-left: 2px;
+  border: 1px solid #472c0c;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.header svg {
+  margin-top: -7px;
+}
+
+.nav {
+  width: 525px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  background-color: #472c0c;
+}
+
+.nav_items {
+  display: flex;
+}
+
+.nav_items a:visited {
+  color: white;
+}
+
+.nav_item {
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: -1px;
+  font-weight: 700;
+  color: white;
+  border: 1px solid rgb(157, 162, 167);
+  background-color: rgb(157, 162, 167);
+  border-radius: 7px;
+  padding: 13px;
+}
+
+.nav_item_button {
+  color: rgb(231, 227, 227);
+  font-size: 30px;
+}
+
+.nav_item a {
+  text-decoration: none;
+}
+
+#navItemLeftButton {
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+#navItemRightButton {
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+/* #navItemFirst {
+  border-radius: 7px;
+  padding: 13px;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+} */
+
+/* #navItemFirst a {
+  color: black;
+} */
+
+#option {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: -43px;
+  text-align: center;
+  position: relative;
+  top: 60px;
+  height: 20px;
+}
+
+.main {
+  width: 525px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* menu가 1~4개여도 밑에 공백이 나오도록 설정 */
+  grid-template-rows: repeat(3, 1fr);
+  min-height: 250px;
+}
+
+.item {
+  width: 100px;
+  height: 105px;
+  border: 1px solid rgb(227, 234, 240);
+  margin-left: 10px;
+  margin-right: 15px;
+  margin-top: 8px;
+  margin-bottom: 1px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.item_image {
+  width: 100px;
+}
+
+#nextButton {
+  height: 38px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nextButtonLeft {
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(150, 148, 148);
+}
+
+#nextButtonRight {
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(150, 148, 148);
+}
+
+#nextButtonDisplay {
+  font-size: 30px;
+  margin-top: -2px;
+  color: darkblue;
+}
+
+.item_image {
+  height: 70px;
+  border-bottom: 1px solid rgb(209, 218, 224);
+}
+
+.item_name {
+  font-size: 10px;
+  text-align: center;
+  background-color: rgb(242, 242, 243);
+}
+
+.item_price {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: rgb(242, 242, 243);
+}
+
+#cancelBtn {
+  position: absolute;
+  top: 0px;
+  left: 65px;
+  border: 1px solid #472c0c;
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  visibility: hidden;
+}
+
+#cancelNotice {
+  background-color: #472c0c;
+  color: white;
+  font-size: 14px;
+  margin-top: -1px;
+  margin-left: -1px;
+  text-align: center;
+}
+
+#cancelMessage {
+  margin-top: 33px;
+  text-align: center;
+  font-weight: bolder;
+  color: black;
+}
+
+.cancelBtns {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.cancelBtns #yesBtn {
+  background-color: #4954ec;
+  width: 80px;
+  height: 40px;
+  color: white;
+  margin: 5px;
+}
+
+.cancelBtns #noBtn {
+  background-color: tomato;
+  width: 80px;
+  height: 40px;
+  color: white;
+  margin: 5px;
+}
+
+#yesBtn a {
+  text-decoration: none;
+  color: white;
+}
+
+.banner {
+  height: 160px;
+  width: 525px;
+  /* margin: auto; */
+}
+
+.banner_image {
+  height: 160px;
+  width: 525px;
+}
+
+#orderPriceDiv {
+  position: relative;
+  top: -135px;
+  left: 36px;
+  display: flex;
+  justify-content: start;
+  height: 0px;
+}
+
+#orderPrice {
+  height: 100px;
+  width: 108px;
+  margin-left: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(197, 133, 15);
+  background-color: black;
+  opacity: 0.7;
+  font-size: larger;
+  position: relative;
+  z-index: 0;
+}
+
+#orderNameDiv {
+  position: relative;
+  top: -210px;
+  display: flex;
+  left: 36px;
+  justify-content: start;
+  height: 0px;
+}
+
+#orderName {
+  height: 50px;
+  width: 105px;
+  margin-left: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  /* -webkit-transform: scale(0.73); */
+  position: relative;
+  top: 100px;
+}
+
+#orderDrink {
+  height: 70px;
+  width: 108px;
+  opacity: 0.3;
+  margin-top: 37px;
+  position: relative;
+}
+
+#deleteBtn {
+  color: rgb(218, 216, 216);
+  margin-left: -14px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.8;
+  height: 20px;
+  cursor: pointer;
+}
+
+#cartQuantity {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-size: 21px;
+  margin-top: -38px;
+  margin-left: 38px;
+  height: 0px;
+  left: -18px;
+  /* top: 8px; */
+}
+
+#orderName .fa-minus-circle {
+  position: relative;
+  left: -15px;
+  top: 70px;
+  font-size: 21px;
+  /* margin-right: 7px; */
+}
+
+#orderName .fa-plus-circle {
+  position: relative;
+  left: 15px;
+  top: 70px;
+  font-size: 21px;
+}
+
+#chevronLeft {
+  z-index: 2;
+  color: rgb(134, 131, 131);
+  font-size: 30px;
+  font-weight: bolder;
+  visibility: hidden;
+  cursor: pointer;
+  position: relative;
+  top: -100px;
+}
+
+#chevronRight {
+  z-index: 2;
+  color: rgb(134, 131, 131);
+  font-size: 30px;
+  font-weight: bolder;
+  visibility: hidden;
+  cursor: pointer;
+  position: relative;
+  top: -100px;
+  right: -465px;
+}
+
+.footer_menu {
+  height: 58px;
+  width: 525px;
+  margin: auto;
+  background-color: slategrey;
+  display: flex;
+  color: white;
+}
+
+#optionIcon {
+  width: 40px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 5px;
+  text-align: center;
+  border: 1px solid rgb(139, 144, 148);
+  background-color: rgb(139, 144, 148);
+  color: white;
+}
+
+#orderNumber {
+  width: 70px;
+  height: 58px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 22px;
+}
+
+#orderNumber #drinkNum {
+  font-size: 20px;
+}
+
+#sum {
+  margin-left: auto;
+  width: 100px;
+  height: 58px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+#sum #totalPrice {
+  color: rgb(50, 211, 203);
+  font-size: 22px;
+}
+
+#cancelAll {
+  width: 70px;
+  height: 58px;
+  background-color: tomato;
+  font-weight: bolder;
+  font-size: 15px;
+  line-height: 28px;
+  text-align: center;
+}
+
+#cancelAll svg {
+  margin-top: 4px;
+  width: 42px;
+  height: 22px;
+}
+
+#card {
+  width: 70px;
+  height: 58px;
+  background-color: #4954ec;
+  font-weight: bolder;
+  line-height: 58px;
+  font-size: 15px;
+  line-height: 28px;
+  text-align: center;
+}
+
+#card svg {
+  margin-top: 4px;
+  width: 42px;
+  height: 22px;
+}

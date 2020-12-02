@@ -1,0 +1,141 @@
+doctype html
+html(lang="ko")
+  head
+    // Required meta tags
+    style.
+      html,
+      body {
+      width: 100%;
+      height: 100%;
+      }
+      .wrapper {
+      margin: 0 auto;
+      width: 525px;
+      height: 700px;
+      background: white;
+      border : 3px solid grey
+      }
+      #top1 {
+      width: 100%;
+      height: 60px;
+      background : cornflowerblue;
+      font-weight : bold;
+      font-size : 40px;
+      line-height : 60px;
+      color : white;
+      }
+      #payment{
+      width: 100%;
+      height: 100%;
+      border-bottom: 3px solid black;
+      font-size: 30px;
+      line-height: 60px;
+      }
+      #payment{
+      margin-right:auto;
+      float: left;
+      }
+      #image {
+      width: 340px;
+      border: none;
+      }
+      #payment_n{
+      color: red;
+      margin-right: auto;
+      float: right;
+      font-size: 35px;
+      }
+      img {
+      display: block;
+      margin: auto;
+      }
+      .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s, visibility 1s;
+      }
+      .popup > .popup-content {
+      width: 350px;
+      height: 350px;
+      border: 1px solid black;
+      background-color: white;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);;
+      }
+      #cancle_top1{
+      background-color: cornflowerblue;
+      width: 100%;
+      height: 10%;
+      }
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Bootstrap CSS
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    script.
+      function open_receipt_popup() {
+      $('#receipt').css('opacity', '1');
+      $('#receipt').css('visibility', 'visible')
+      setTimeout(() => close_receipt_popup(), 3500);
+      }
+      function close_receipt_popup() {
+      $('#receipt').css('opacity', '0');
+      $('#receipt').css('visibility', 'hidden')
+      }
+      $(document).ready(function () {
+      open_receipt_popup()
+      });
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title complete
+  body
+    .wrapper
+      #top1 결제완료
+      #order_inf
+        #payment
+          | 결제금액
+          span#payment_n 3,000
+      br
+      br
+      div(style="font-size: 30px; text-align: center") 영수증을 받아가 주세요.
+      div(style="font-size: 35px;color: red;text-align: center") 주문번호&nbsp:&nbsp104
+      br
+      br
+      img#image(src="{{url_for('static', filename='image/receipt.gif')}}" ;="" alt="")
+      img
+      br
+      br
+      h1(style="font-size: 18px" align="center")
+        | 결제가 완료되었습니다.
+        br
+        | 이용해 주셔서 감사합니다.
+      br
+      h2(style="color: red; font-size: 20px" align="center") 카드를 회수하여 주시기 바랍니다.결제완료 화면은 잠시후 자동으로 닫힙니다.
+      h6
+      #receipt.popup
+        .popup-content(style="border: 3px solid black")
+          #cancle_top1(style="font-size: 30px; text-align: center") 영수증
+          div
+            div(style="font-size: 30px;text-align: center") 주문번호 : 104번
+            div(style="font-size: 15px;text-align: center")
+              div 주문 고유번호 : 202010091850250208
+              div 2020:10:09:18:50:25
+              div 매장번호 : 0208
+              div 주문번호 : 104
+              br
+            div(style="text-align: center;font-size: 20px;")
+              div 아메리카노(ICE)(연하게)     1 : 3000원
+              div ------------------------------------------
+              div 총합계 : 3000원
+              div 총수량 : 1개
